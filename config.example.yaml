@@ -1,0 +1,85 @@
+# Automated Story Engine Configuration Example
+# Copy this file to config.yaml and customize as needed
+
+# LLM Models Configuration
+llm_models:
+  primary:
+    name: "gpt-4o"
+    provider: "openai"
+    max_tokens: 4000
+    temperature: 0.7
+    top_p: 0.9
+    frequency_penalty: 0.3
+    presence_penalty: 0.1
+  
+  secondary:
+    name: "claude-3-5-sonnet-20241022"
+    provider: "anthropic"
+    max_tokens: 4000
+    temperature: 0.7
+  
+  cost_optimizer:
+    name: "gemini-1.5-flash"
+    provider: "google"
+    max_tokens: 4000
+    temperature: 0.7
+
+# Image Generation Settings
+image_generation:
+  primary_provider: "openai"  # openai, stability, midjourney
+  model: "dall-e-3"
+  size: "1024x1024"
+  quality: "hd"
+  style: "natural"
+  
+# Audio/TTS Settings  
+audio_generation:
+  primary_provider: "openai"  # openai, azure, elevenlabs
+  model: "tts-1"  # OpenAI TTS model
+  voice: "alloy"  # OpenAI voice options: alloy, echo, fable, onyx, nova, shimmer
+  speed: 1.0
+  format: "mp3"
+  
+# Story Generation Parameters
+story_parameters:
+  min_scenes: 6
+  max_scenes: 15
+  optimal_scenes: 10
+  scene_duration: 30  # seconds
+  transition_duration: 2  # seconds
+  
+# Quality Control
+quality_control:
+  json_validation: true
+  narrative_coherence_check: true
+  visual_consistency_check: true
+  audio_sync_validation: true
+  retry_attempts: 3
+  
+# Performance Settings
+performance:
+  concurrent_generations: 3
+  cache_results: true
+  cache_ttl: 3600  # 1 hour
+  max_memory_usage: "2GB"
+  
+# File Management
+file_management:
+  output_directory: "./generated_stories"
+  temp_directory: "./temp"
+  assets_directory: "./assets"
+  examples_directory: "./examples"
+  cleanup_temp_files: true
+  
+# API Rate Limits
+rate_limits:
+  openai_requests_per_minute: 50
+  anthropic_requests_per_minute: 30
+  elevenlabs_requests_per_minute: 20
+  
+# Logging
+logging:
+  level: "INFO"
+  file: "./logs/story_engine.log"
+  max_size: "10MB"
+  backup_count: 5

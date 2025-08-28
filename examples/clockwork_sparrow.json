@@ -1,0 +1,23 @@
+{
+    "title": "The Clockwork Sparrow's Lament",
+    "concept": {
+        "characters": {
+            "protagonist": "Elara, a young clockmaker's apprentice with delicate hands and a patient heart",
+            "mentor": "Master Cornelius, an elderly clockmaker who creates magical timepieces"
+        },
+        "plot": "When Master Cornelius falls into an enchanted sleep, Elara must repair the legendary Clockwork Sparrow to save him, learning that true craftsmanship comes from both skill and love.",
+        "moral": "Patience and precision, guided by love, can overcome any challenge"
+    },
+    "story_summary": "Young Elara faces her greatest challenge when her mentor falls into an enchanted sleep. Only by repairing the legendary Clockwork Sparrow—a task that requires not just technical skill but emotional courage—can she save him and discover her own mastery.",
+    "scene_example": {
+        "scene_number": 1,
+        "plot_summary": "Elara discovers her mentor's condition and learns about the Clockwork Sparrow",
+        "visual_description": "A cluttered workshop filled with brass gears, silver springs, and half-finished timepieces. Golden afternoon light streams through dusty windows, illuminating motes of dust dancing in the air. Elara, a determined girl with copper hair tied back, kneels beside her sleeping mentor, an elderly man with kind wrinkles, surrounded by softly ticking clockwork creatures. Watercolor illustration style with warm, nostalgic tones.",
+        "narration_text": "The workshop fell silent for the first time in decades. Master Cornelius lay still among his creations, his chest rising and falling like the gentle rhythm of a grandfather clock. Elara knew from the ancient books that only the legendary Clockwork Sparrow could wake him from this enchanted slumber.",
+        "narration_tones": {
+            "The workshop fell silent for the first time in decades.": "sad",
+            "Master Cornelius lay still among his creations, his chest rising and falling like the gentle rhythm of a grandfather clock.": "calm",
+            "Elara knew from the ancient books that only the legendary Clockwork Sparrow could wake him from this enchanted slumber.": "determined"
+        }
+    }
+}

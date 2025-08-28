@@ -1,0 +1,36 @@
+{
+    "metadata": {
+        "title": "Her Blossom",
+        "created_at": "2024-08-28T13:35:44.066573",
+        "story_engine_version": "1.0.0",
+        "scene_count": 7,
+        "total_duration": 138.0
+    },
+    "story": {
+        "story_summary": "In a world of bustling city streets and quiet coffee shops, Maya carries invisible scars from past heartbreaks, building walls around her heart while secretly yearning for connection. Enter Ethan, a gentle soul who sees beyond her carefully constructed defenses. Through shared moments of silence, small acts of kindness, and patient understanding, their story unfolds like a delicate dance of two hearts learning to trust again.",
+        "scenes": [
+            {
+                "scene_number": 1,
+                "plot_summary": "Maya encounters Ethan for the first time in a bookstore, where her defensive nature clashes with his gentle presence",
+                "visual_description": "A cozy bookstore with warm wooden shelves and soft amber lighting. Maya, early 20s with dark hair and guarded eyes, wearing oversized sweater, accidentally bumps into Ethan, a tall young man with kind eyes and casual attire. Rain streams down the storefront windows, creating an intimate atmosphere.",
+                "narration_text": "Maya clutched her book closer to her chest, using it as a shield in the narrow aisle. When their shoulders brushed, she flinched away like a startled bird, but something in his apologetic smile made her pause. His eyes held no judgment, only a quiet understanding that unsettled her.",
+                "narration_tones": {
+                    "Maya clutched her book closer to her chest, using it as a shield in the narrow aisle.": "tense",
+                    "When their shoulders brushed, she flinched away like a startled bird, but something in his apologetic smile made her pause.": "mysterious",
+                    "His eyes held no judgment, only a quiet understanding that unsettled her.": "curious"
+                }
+            },
+            {
+                "scene_number": 2,
+                "plot_summary": "Maya notices Ethan's consistent presence in her daily life, always respectfully distant but somehow there",
+                "visual_description": "A small café with large windows overlooking a busy street. Maya sits alone at her usual corner table, while Ethan reads at a distant table. Golden afternoon light casts long shadows, highlighting the steam from coffee cups.",
+                "narration_text": "She saw him there again, three tables away, absorbed in his book as if the world didn't exist. Days turned into weeks, and his presence became a constant she hadn't asked for but couldn't ignore. Like a gentle shadow, he existed in her orbit without demanding entry.",
+                "narration_tones": {
+                    "She saw him there again, three tables away, absorbed in his book as if the world didn't exist.": "calm",
+                    "Days turned into weeks, and his presence became a constant she hadn't asked for but couldn't ignore.": "mysterious",
+                    "Like a gentle shadow, he existed in her orbit without demanding entry.": "curious"
+                }
+            }
+        ]
+    }
+}

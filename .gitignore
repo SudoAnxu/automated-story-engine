@@ -1,0 +1,100 @@
+# Environment variables and API keys
+.env
+.env.local
+.env.production
+.env.staging
+
+# Configuration files with sensitive data
+config.yaml
+config.local.yaml
+config.production.yaml
+
+# Generated stories and outputs
+generated_stories/
+temp/
+assets/
+simple_output/
+
+# Logs
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# API keys and secrets
+secrets.yaml
+api_keys.yaml
+credentials.json
+
+# Large model files
+*.bin
+*.safetensors
+models/
+checkpoints/
+
+# Cache directories
+.cache/
+cache/

@@ -1,0 +1,40 @@
+# Automated Story Engine Dependencies
+
+# Core Framework
+pydantic>=2.8.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
+jinja2>=3.1.0
+
+# LLM Integration
+openai>=1.50.0
+anthropic>=0.35.0
+google-generativeai>=0.8.0
+
+# HTTP and Async
+aiohttp>=3.9.0
+asyncio-throttle>=1.0.0
+
+# Rich terminal output and progress bars
+rich>=13.0.0
+tqdm>=4.65.0
+
+# Optional dependencies for enhanced features
+# Uncomment these if you want additional functionality
+
+# Image generation
+# pillow>=10.0.0
+
+# Video compilation
+# moviepy>=1.0.3
+
+# Advanced prompt optimization (optional - can cause slow startup)
+# sentence-transformers>=2.2.2
+# numpy>=1.26.0,<2.0
+
+# Development and testing (uncomment for development)
+# pytest>=7.0.0
+# pytest-asyncio>=0.21.0
+# black>=23.0.0
+# flake8>=6.0.0
+# isort>=5.12.0

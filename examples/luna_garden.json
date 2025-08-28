@@ -1,0 +1,22 @@
+{
+    "title": "Luna's Garden of Dreams",
+    "concept": {
+        "characters": {
+            "protagonist": "Luna, a girl who can grow plants from her dreams",
+            "village_elder": "Grandmother Willow, who remembers the old magic"
+        },
+        "plot": "Luna discovers her unique ability to grow magical plants from dreams and uses this gift to bring rain back to her drought-stricken village, learning that sometimes the most impossible dreams hold the greatest power.",
+        "moral": "Dreams, when nurtured with hope and courage, can bloom into reality"
+    },
+    "story_summary": "In a village withered by endless drought, young Luna discovers she can grow magical plants from her dreams. As she learns to nurture this impossible gift, she must gather the courage to attempt the greatest dream of all—bringing rain back to her people.",
+    "scene_example": {
+        "scene_number": 1,
+        "plot_summary": "Luna first discovers her dream-growing ability in her family's withered garden",
+        "visual_description": "A withered garden under starlight, with cracked earth and dried plant stalks reaching toward the night sky. Luna, a young girl with flowing dark hair, sleeps peacefully on a woven mat among the dead plants. Around her, glowing, ethereal plants begin to sprout from the ground—impossible flowers with petals that shimmer like stardust and leaves that hold dewdrops reflecting the moon. Magical realism style with soft, luminous lighting.",
+        "narration_text": "Luna dreamed of rain, and where her tears fell in sleep, impossible flowers began to bloom. Each petal held a drop of hope in the endless drought, glowing softly in the darkness like captured starlight.",
+        "narration_tones": {
+            "Luna dreamed of rain, and where her tears fell in sleep, impossible flowers began to bloom.": "awe",
+            "Each petal held a drop of hope in the endless drought, glowing softly in the darkness like captured starlight.": "curious"
+        }
+    }
+}
