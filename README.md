@@ -43,11 +43,11 @@ This public prototype serves as:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/automated-story-engine.git
+git clone https://github.com/SudoAnxu/automated-story-engine.git
 cd automated-story-engine
 
 # Install dependencies
-pip install -r requirements_core.txt
+pip install -r requirements.txt
 
 # Set up API keys
 python setup_env.py
@@ -174,7 +174,7 @@ python setup_env.py
 
 **"Import errors"**
 ```bash
-pip install -r requirements_core.txt
+pip install -r requirements.txt
 ```
 
 **"Audio generation not working"**
