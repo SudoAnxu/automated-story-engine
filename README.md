@@ -4,19 +4,38 @@
 
 Transform your story ideas into rich, interactive narratives with AI-generated text, images, and audio. Create beautiful stories that flow seamlessly from scene to scene.
 
-![Story Engine Demo](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+> **⚠️ Important Notice**: This is a **public prototype/demo version** of the Automated Story Engine. The full production version with advanced features, proprietary prompt engineering techniques, and optimized performance is not publicly available. This repository demonstrates the core functionality and allows you to learn from and build upon the foundational code.
+
+![Story Engine Demo](https://img.shields.io/badge/Status-Public%20Prototype-orange)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## ✨ Features
 
-- **🤖 AI-Powered Story Generation**: Create compelling narratives using OpenAI, Anthropic, and Google AI
+### **🔓 What's Included (Public Prototype)**
+- **🤖 Basic AI Story Generation**: Create narratives using OpenAI, Anthropic, and Google AI
 - **🎨 Multi-Modal Output**: Generate images, audio narration, and interactive HTML viewers
-- **🔄 Seamless Transitions**: Stories flow naturally from scene to scene
-- **🎵 Emotional Audio**: Rich narration with emotional tone mapping
-- **📱 Interactive Viewer**: Beautiful HTML interface for story consumption
-- **🎬 Video Compilation**: Optional video creation with images and audio
-- **⚡ Fast & Reliable**: Optimized prompts and fallback systems
+- **🔄 Story Structure**: Basic scene-to-scene flow and transitions
+- **🎵 Audio Generation**: Text-to-speech with emotional tone mapping
+- **📱 Interactive Viewer**: HTML interface for story consumption
+- **📚 Real Examples**: Complete story examples with all scenes
+- **🔧 Working Code**: Functional implementation you can run and modify
+
+### **🔒 What's Not Included (Production Version)**
+- **Advanced Prompt Engineering**: Proprietary optimization techniques
+- **Intelligent Delegation**: Advanced provider switching and fallback strategies
+- **Performance Optimization**: Cost reduction and speed improvements
+- **Advanced Features**: Custom voice training, 3D worlds, real-time collaboration
+- **Production Configuration**: Optimized settings and tuning parameters
+
+## 🎯 Purpose of This Repository
+
+This public prototype serves as:
+- **📖 Learning Resource**: Understand how AI story generation works
+- **🔧 Foundation**: Build upon the core architecture
+- **🎨 Demonstration**: See the quality of generated content
+- **🤝 Community**: Contribute improvements and share ideas
+- **📚 Education**: Learn prompt engineering and LLM orchestration
 
 ## 🚀 Quick Start
 
@@ -56,6 +75,11 @@ Your generated story will be saved in `generated_stories/[story_title]/` with:
 ## 📖 Example Output
 
 See [EXAMPLE_OUTPUT.md](EXAMPLE_OUTPUT.md) for a complete example of generated story content.
+
+### **🎬 Live Demo**
+- **Complete Story**: [`examples/her_blossom_complete.json`](examples/her_blossom_complete.json) - Full 7-scene romance story
+- **Interactive Viewer**: [`examples/her_blossom_viewer.html`](examples/her_blossom_viewer.html) - Open in browser to see the story in action
+- **All Examples**: [`examples/`](examples/) - More sample stories and documentation
 
 ## 🎯 Usage Examples
 
