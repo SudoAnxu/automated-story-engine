@@ -12,7 +12,7 @@ Thank you for your interest in contributing to the Automated Story Engine! We we
 ### Development Setup
 ```bash
 # Fork and clone the repository
-git clone https://github.com/yourusername/automated-story-engine.git
+git clone https://github.com/SudoAnxu/automated-story-engine.git
 cd automated-story-engine
 
 # Create a virtual environment
