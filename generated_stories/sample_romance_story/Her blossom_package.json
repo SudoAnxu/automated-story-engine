@@ -1,0 +1,175 @@
+{
+  "metadata": {
+    "title": "Her blossom",
+    "created_at": "2025-08-28T13:35:44.066573",
+    "story_engine_version": "1.0.0",
+    "scene_count": 7,
+    "total_duration": 138.0
+  },
+  "story": {
+    "story_summary": "In a world of bustling city streets and quiet coffee shops, Maya carries invisible scars from past heartbreaks, building walls around her heart while secretly yearning for connection. Enter Ethan, a gentle soul who sees beyond her carefully constructed defenses. Through shared moments of silence, small acts of kindness, and patient understanding, their story unfolds like a delicate dance of two hearts learning to trust again. Maya struggles between her fear of abandonment and the undeniable pull of Ethan's steadfast presence, while he quietly demonstrates that love doesn't always need words to be real.",
+    "scenes": [
+      {
+        "scene_number": 1,
+        "plot_summary": "Maya encounters Ethan for the first time in a bookstore, where her defensive nature clashes with his gentle presence",
+        "visual_description": "A cozy bookstore with warm wooden shelves and soft amber lighting. Maya, early 20s with dark hair and guarded eyes, wearing oversized sweater, accidentally bumps into Ethan, a tall young man with kind eyes and casual attire. Rain streams down the storefront windows, creating a intimate atmosphere. Soft, watercolor illustration style with muted browns and blues.",
+        "narration_text": "Maya clutched her book closer to her chest, using it as a shield in the narrow aisle. When their shoulders brushed, she flinched away like a startled bird, but something in his apologetic smile made her pause. His eyes held no judgment, only a quiet understanding that unsettled her.",
+        "narration_tones": {
+          "Maya clutched her book closer to her chest, using it as a shield in the narrow aisle.": "tense",
+          "When their shoulders brushed, she flinched away like a startled bird, but something in his apologetic smile made her pause.": "mysterious",
+          "His eyes held no judgment, only a quiet understanding that unsettled her.": "curious"
+        }
+      },
+      {
+        "scene_number": 2,
+        "plot_summary": "Maya notices Ethan's consistent presence in her daily life, always respectfully distant but somehow there",
+        "visual_description": "A small café with large windows overlooking a busy street. Maya sits alone at her usual corner table, while Ethan reads at a distant table. Golden afternoon light casts long shadows, highlighting the steam from coffee cups. Digital art style with emphasis on light and shadow play.",
+        "narration_text": "She saw him there again, three tables away, absorbed in his book as if the world didn't exist. Days turned into weeks, and his presence became a constant she hadn't asked for but couldn't ignore. Like a gentle shadow, he existed in her orbit without demanding entry.",
+        "narration_tones": {
+          "She saw him there again, three tables away, absorbed in his book as if the world didn't exist.": "calm",
+          "Days turned into weeks, and his presence became a constant she hadn't asked for but couldn't ignore.": "mysterious",
+          "Like a gentle shadow, he existed in her orbit without demanding entry.": "curious"
+        }
+      },
+      {
+        "scene_number": 3,
+        "plot_summary": "During a sudden rainstorm, Ethan offers Maya his umbrella without expecting anything in return",
+        "visual_description": "A rain-soaked city street at dusk. Neon signs reflect in puddles, creating a dreamy atmosphere. Maya stands under a shop awning, while Ethan approaches with a blue umbrella. Studio Ghibli-inspired style with emphasis on rain effects and atmospheric lighting.",
+        "narration_text": "The rain fell in sheets, trapping her beneath the fading awning. He appeared like a ghost through the downpour, offering his umbrella without a word. When she hesitated, he simply placed it beside her and walked away into the rain, leaving her staring at his retreating figure with an unfamiliar ache in her chest.",
+        "narration_tones": {
+          "The rain fell in sheets, trapping her beneath the fading awning.": "tense",
+          "He appeared like a ghost through the downpour, offering his umbrella without a word.": "mysterious",
+          "When she hesitated, he simply placed it beside her and walked away into the rain, leaving her staring at his retreating figure with an unfamiliar ache in her chest.": "sad"
+        }
+      },
+      {
+        "scene_number": 4,
+        "plot_summary": "Maya accidentally reveals her vulnerability during a moment of crisis, and Ethan provides silent support",
+        "visual_description": "A quiet park at sunset. Maya sits on a bench, tears visible on her face, while Ethan sits at the other end, maintaining respectful distance. Cherry blossoms fall around them. Impressionistic painting style with soft focus and emotional emphasis.",
+        "narration_text": "The weight of her memories crashed over her like waves, and for once, she couldn't hold back the tears. He remained at the edge of her space, a steady presence offering neither advice nor empty comfort. In that silence, she felt something inside her begin to crack and heal at the same time.",
+        "narration_tones": {
+          "The weight of her memories crashed over her like waves, and for once, she couldn't hold back the tears.": "sad",
+          "He remained at the edge of her space, a steady presence offering neither advice nor empty comfort.": "calm",
+          "In that silence, she felt something inside her begin to crack and heal at the same time.": "mysterious"
+        }
+      },
+      {
+        "scene_number": 5,
+        "plot_summary": "Maya begins to recognize her growing feelings for Ethan but struggles with her fear of vulnerability",
+        "visual_description": "Maya's apartment at night, minimally furnished with personal touches. She stands by the window, city lights twinkling beyond. A handmade bookmark from Ethan rests on her nightstand. Realistic digital art style with intimate lighting and focus on emotional details.",
+        "narration_text": "Her fingers traced the edges of his handmade bookmark, each crease telling a story of care she wasn't ready to accept. The city lights blurred through her window as memories of his quiet kindness flooded her mind. For the first time in years, the walls she'd built felt more like a prison than protection.",
+        "narration_tones": {
+          "Her fingers traced the edges of his handmade bookmark, each crease telling a story of care she wasn't ready to accept.": "tense",
+          "The city lights blurred through her window as memories of his quiet kindness flooded her mind.": "mysterious",
+          "For the first time in years, the walls she'd built felt more like a prison than protection.": "determined"
+        }
+      },
+      {
+        "scene_number": 6,
+        "plot_summary": "A moment of crisis forces Maya to confront her feelings and fears about letting Ethan into her life",
+        "visual_description": "A bridge at twilight during light snow. Maya stands at the railing, Ethan approaches slowly. Their breaths visible in the cold air. Soft, diffused lighting creates a dreamy atmosphere. Watercolor and ink illustration style with emphasis on emotional tension.",
+        "narration_text": "The snow fell silently around them as she gripped the bridge railing. 'I can't promise I won't run,' she whispered, her voice barely audible above the wind. His response was to simply stand beside her, their shoulders almost touching, as if to say he would wait forever if needed.",
+        "narration_tones": {
+          "The snow fell silently around them as she gripped the bridge railing.": "tense",
+          "'I can't promise I won't run,' she whispered, her voice barely audible above the wind.": "sad",
+          "His response was to simply stand beside her, their shoulders almost touching, as if to say he would wait forever if needed.": "determined"
+        }
+      },
+      {
+        "scene_number": 7,
+        "plot_summary": "Maya finally allows herself to express her feelings through a small but significant gesture",
+        "visual_description": "The same café where they first met, now bathed in morning light. Maya approaches Ethan's table with two cups of coffee. Soft focus on their expressions, particularly their eyes. Warm color palette with gentle brushstrokes in a contemporary illustration style.",
+        "narration_text": "Her hands trembled slightly as she placed the coffee cup on his table, a mirror of his countless quiet gestures. Their eyes met, and for the first time, she didn't look away. In that moment, without words, everything changed.",
+        "narration_tones": {
+          "Her hands trembled slightly as she placed the coffee cup on his table, a mirror of his countless quiet gestures.": "tense",
+          "Their eyes met, and for the first time, she didn't look away.": "determined",
+          "In that moment, without words, everything changed.": "joyful"
+        }
+      }
+    ],
+    "metadata": null
+  },
+  "assets": {
+    "images": [
+      {
+        "scene_number": 1,
+        "path": "generated_stories\\Her blossom\\scene_01.png",
+        "generated": true
+      },
+      {
+        "scene_number": 2,
+        "path": "generated_stories\\Her blossom\\scene_02.png",
+        "generated": true
+      },
+      {
+        "scene_number": 3,
+        "path": "generated_stories\\Her blossom\\scene_03.png",
+        "generated": true
+      },
+      {
+        "scene_number": 4,
+        "path": "generated_stories\\Her blossom\\scene_04.png",
+        "generated": true
+      },
+      {
+        "scene_number": 5,
+        "path": "generated_stories\\Her blossom\\scene_05.png",
+        "generated": true
+      },
+      {
+        "scene_number": 6,
+        "path": "generated_stories\\Her blossom\\scene_06.png",
+        "generated": true
+      },
+      {
+        "scene_number": 7,
+        "path": "generated_stories\\Her blossom\\scene_07.png",
+        "generated": true
+      }
+    ],
+    "audio": [
+      {
+        "scene_number": 1,
+        "path": "generated_stories\\Her blossom\\scene_01.mp3",
+        "generated": true
+      },
+      {
+        "scene_number": 2,
+        "path": "generated_stories\\Her blossom\\scene_02.mp3",
+        "generated": true
+      },
+      {
+        "scene_number": 3,
+        "path": "generated_stories\\Her blossom\\scene_03.mp3",
+        "generated": true
+      },
+      {
+        "scene_number": 4,
+        "path": "generated_stories\\Her blossom\\scene_04.mp3",
+        "generated": true
+      },
+      {
+        "scene_number": 5,
+        "path": "generated_stories\\Her blossom\\scene_05.mp3",
+        "generated": true
+      },
+      {
+        "scene_number": 6,
+        "path": "generated_stories\\Her blossom\\scene_06.mp3",
+        "generated": true
+      },
+      {
+        "scene_number": 7,
+        "path": "generated_stories\\Her blossom\\scene_07.mp3",
+        "generated": true
+      }
+    ]
+  },
+  "compilation_info": {
+    "formats_generated": [
+      "json"
+    ],
+    "scene_duration_seconds": 30,
+    "transition_duration_seconds": 2
+  }
+}

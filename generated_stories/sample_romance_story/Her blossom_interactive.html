@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Her blossom</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .story-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .story-title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .story-summary {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .scene {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        .scene-number {
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        .scene-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin: 15px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .scene-text {
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+        .audio-controls {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .audio-controls audio {
+            width: 100%;
+            max-width: 400px;
+        }
+        .navigation {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .nav-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .nav-button:hover {
+            background: #2980b9;
+        }
+        .nav-button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .scene {
+            display: none;
+        }
+        .scene.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="story-container">
+        <h1 class="story-title">Her blossom</h1>
+        <p class="story-summary">In a world of bustling city streets and quiet coffee shops, Maya carries invisible scars from past heartbreaks, building walls around her heart while secretly yearning for connection. Enter Ethan, a gentle soul who sees beyond her carefully constructed defenses. Through shared moments of silence, small acts of kindness, and patient understanding, their story unfolds like a delicate dance of two hearts learning to trust again. Maya struggles between her fear of abandonment and the undeniable pull of Ethan's steadfast presence, while he quietly demonstrates that love doesn't always need words to be real.</p>
+        
+        <div id="scenes-container">
+            <!-- Scenes will be populated by JavaScript -->
+        </div>
+        
+        <div class="navigation">
+            <button class="nav-button" id="prev-btn" onclick="previousScene()">Previous</button>
+            <span id="scene-counter">Scene 1 of 7</span>
+            <button class="nav-button" id="next-btn" onclick="nextScene()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const scenes = [{"number": 1, "plot_summary": "Maya encounters Ethan for the first time in a bookstore, where her defensive nature clashes with his gentle presence", "narration": "Maya clutched her book closer to her chest, using it as a shield in the narrow aisle. When their shoulders brushed, she flinched away like a startled bird, but something in his apologetic smile made her pause. His eyes held no judgment, only a quiet understanding that unsettled her.", "image_path": "scene_01.png", "audio_path": "scene_01.mp3"}, {"number": 2, "plot_summary": "Maya notices Ethan's consistent presence in her daily life, always respectfully distant but somehow there", "narration": "She saw him there again, three tables away, absorbed in his book as if the world didn't exist. Days turned into weeks, and his presence became a constant she hadn't asked for but couldn't ignore. Like a gentle shadow, he existed in her orbit without demanding entry.", "image_path": "scene_02.png", "audio_path": "scene_02.mp3"}, {"number": 3, "plot_summary": "During a sudden rainstorm, Ethan offers Maya his umbrella without expecting anything in return", "narration": "The rain fell in sheets, trapping her beneath the fading awning. He appeared like a ghost through the downpour, offering his umbrella without a word. When she hesitated, he simply placed it beside her and walked away into the rain, leaving her staring at his retreating figure with an unfamiliar ache in her chest.", "image_path": "scene_03.png", "audio_path": "scene_03.mp3"}, {"number": 4, "plot_summary": "Maya accidentally reveals her vulnerability during a moment of crisis, and Ethan provides silent support", "narration": "The weight of her memories crashed over her like waves, and for once, she couldn't hold back the tears. He remained at the edge of her space, a steady presence offering neither advice nor empty comfort. In that silence, she felt something inside her begin to crack and heal at the same time.", "image_path": "scene_04.png", "audio_path": "scene_04.mp3"}, {"number": 5, "plot_summary": "Maya begins to recognize her growing feelings for Ethan but struggles with her fear of vulnerability", "narration": "Her fingers traced the edges of his handmade bookmark, each crease telling a story of care she wasn't ready to accept. The city lights blurred through her window as memories of his quiet kindness flooded her mind. For the first time in years, the walls she'd built felt more like a prison than protection.", "image_path": "scene_05.png", "audio_path": "scene_05.mp3"}, {"number": 6, "plot_summary": "A moment of crisis forces Maya to confront her feelings and fears about letting Ethan into her life", "narration": "The snow fell silently around them as she gripped the bridge railing. 'I can't promise I won't run,' she whispered, her voice barely audible above the wind. His response was to simply stand beside her, their shoulders almost touching, as if to say he would wait forever if needed.", "image_path": "scene_06.png", "audio_path": "scene_06.mp3"}, {"number": 7, "plot_summary": "Maya finally allows herself to express her feelings through a small but significant gesture", "narration": "Her hands trembled slightly as she placed the coffee cup on his table, a mirror of his countless quiet gestures. Their eyes met, and for the first time, she didn't look away. In that moment, without words, everything changed.", "image_path": "scene_07.png", "audio_path": "scene_07.mp3"}];
+        let currentScene = 0;
+
+        function displayScene(sceneIndex) {
+            const container = document.getElementById('scenes-container');
+            const scene = scenes[sceneIndex];
+            
+            container.innerHTML = `
+                <div class="scene active">
+                    <div class="scene-number">Scene ${scene.number}</div>
+                    ${scene.image_path ? `<img src="${scene.image_path}" alt="Scene ${scene.number}" class="scene-image">` : ''}
+                    <div class="scene-text">${scene.narration}</div>
+                    ${scene.audio_path ? `
+                        <div class="audio-controls">
+                            <audio controls>
+                                <source src="${scene.audio_path}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            
+            // Update navigation
+            document.getElementById('scene-counter').textContent = `Scene ${sceneIndex + 1} of ${scenes.length}`;
+            document.getElementById('prev-btn').disabled = sceneIndex === 0;
+            document.getElementById('next-btn').disabled = sceneIndex === scenes.length - 1;
+        }
+
+        function nextScene() {
+            if (currentScene < scenes.length - 1) {
+                currentScene++;
+                displayScene(currentScene);
+            }
+        }
+
+        function previousScene() {
+            if (currentScene > 0) {
+                currentScene--;
+                displayScene(currentScene);
+            }
+        }
+
+        // Initialize
+        displayScene(0);
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight') nextScene();
+            if (event.key === 'ArrowLeft') previousScene();
+        });
+    </script>
+</body>
+</html>
