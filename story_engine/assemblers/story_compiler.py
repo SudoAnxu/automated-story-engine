@@ -135,10 +135,25 @@ class StoryCompiler:
             else:
                 self.stats['failed_compilations'] += 1
             
+            # Add asset generation status to the result
+            asset_status = {
+                'images': {
+                    'generated': len([s for s in image_statuses if s.image_generated]),
+                    'total': len(image_statuses),
+                    'statuses': image_statuses
+                },
+                'audio': {
+                    'generated': len([s for s in audio_statuses if s.audio_generated]),
+                    'total': len(audio_statuses),
+                    'statuses': audio_statuses
+                }
+            }
+            
             return {
                 'success': success,
                 'outputs': compilation_results,
-                'story_directory': str(story_dir)
+                'story_directory': str(story_dir),
+                'asset_status': asset_status
             }
             
         except Exception as e:
@@ -157,25 +172,27 @@ class StoryCompiler:
         
         scene_count = len(story.scenes)
         
-        # Check image assets
-        image_scenes = {status.scene_number for status in image_statuses if status.image_generated}
-        missing_images = set(range(1, scene_count + 1)) - image_scenes
+        # Check image assets (only if images were requested)
+        if image_statuses:
+            image_scenes = {status.scene_number for status in image_statuses if status.image_generated}
+            missing_images = set(range(1, scene_count + 1)) - image_scenes
+            
+            if missing_images:
+                return {
+                    'valid': False,
+                    'error': f"Missing images for scenes: {sorted(missing_images)}"
+                }
         
-        # Check audio assets
-        audio_scenes = {status.scene_number for status in audio_statuses if status.audio_generated}
-        missing_audio = set(range(1, scene_count + 1)) - audio_scenes
-        
-        if missing_images:
-            return {
-                'valid': False,
-                'error': f"Missing images for scenes: {sorted(missing_images)}"
-            }
-        
-        if missing_audio:
-            return {
-                'valid': False,
-                'error': f"Missing audio for scenes: {sorted(missing_audio)}"
-            }
+        # Check audio assets (only if audio was requested)
+        if audio_statuses:
+            audio_scenes = {status.scene_number for status in audio_statuses if status.audio_generated}
+            missing_audio = set(range(1, scene_count + 1)) - audio_scenes
+            
+            if missing_audio:
+                return {
+                    'valid': False,
+                    'error': f"Missing audio for scenes: {sorted(missing_audio)}"
+                }
         
         # Validate file existence
         for status in image_statuses:

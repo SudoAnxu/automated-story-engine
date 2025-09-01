@@ -74,7 +74,7 @@ class OpenAIImageProvider(ImageProvider):
     def _enhance_prompt_for_consistency(self, prompt: str, scene_number: int) -> str:
         """Enhance prompt to maintain visual consistency across scenes."""
         # Add style consistency markers
-        style_suffix = " --style consistent children's book illustration, same artistic style throughout"
+        style_suffix = " --style consistent children's book illustration, same artistic style throughout, cohesive visual narrative, consistent character designs"
         
         # Add scene context for continuity
         if scene_number > 1:
@@ -165,6 +165,11 @@ class ImageGenerator:
         # Initialize providers
         self.providers = self._initialize_providers()
         
+        # Character consistency tracking
+        self.character_descriptions = {}
+        self.style_guide = {}
+        self.generated_scenes = []
+        
         # Generation statistics
         self.stats = {
             'total_generated': 0,
@@ -190,12 +195,82 @@ class ImageGenerator:
         
         return providers
     
+    def _extract_character_descriptions(self, scene: StoryScene) -> Dict[str, str]:
+        """Extract character descriptions from scene text."""
+        characters = {}
+        
+        # Look for character mentions in visual description and narration
+        text_to_analyze = f"{scene.visual_description} {scene.narration_text}"
+        
+        # Enhanced character patterns for better extraction
+        character_patterns = [
+            r'(\w+)\s+(?:the|is a|was a)\s+([^,\.]+)',
+            r'(\w+)\s+(?:named|called)\s+([^,\.]+)',
+            r'(\w+)\s+(?:with|wearing|having)\s+([^,\.]+)',
+            r'(\w+)\s+(?:who|that)\s+([^,\.]+)',
+            r'(\w+)\s+(?:has|had)\s+([^,\.]+)',
+            r'(\w+)\s+(?:in|with)\s+([^,\.]+)',
+        ]
+        
+        import re
+        for pattern in character_patterns:
+            matches = re.findall(pattern, text_to_analyze, re.IGNORECASE)
+            for match in matches:
+                character_name = match[0].strip()
+                description = match[1].strip()
+                if character_name and description and len(character_name) > 2:
+                    # Clean up the description
+                    description = re.sub(r'\s+', ' ', description).strip()
+                    characters[character_name] = description
+        
+        return characters
+    
+    def _build_consistency_prompt(self, scene: StoryScene, base_prompt: str) -> str:
+        """Build a prompt that maintains character and style consistency."""
+        
+        # Extract characters from this scene
+        scene_characters = self._extract_character_descriptions(scene)
+        
+        # Update global character descriptions
+        for char_name, description in scene_characters.items():
+            if char_name not in self.character_descriptions:
+                self.character_descriptions[char_name] = description
+        
+        # Build detailed character consistency section
+        character_consistency = ""
+        if self.character_descriptions:
+            character_consistency = "CRITICAL: Maintain EXACT character consistency. Characters must appear exactly as described:\n"
+            for char_name, desc in self.character_descriptions.items():
+                character_consistency += f"- {char_name}: {desc}\n"
+            character_consistency += "DO NOT change any character's appearance, clothing, or features. "
+        
+        # Build style consistency
+        style_consistency = ""
+        if self.generated_scenes:
+            style_consistency = "Maintain exact same artistic style, color palette, and visual treatment as previous scenes. "
+        
+        # Scene continuity
+        scene_continuity = ""
+        if scene.scene_number > 1:
+            scene_continuity = f"This is scene {scene.scene_number}. "
+        
+        # Enhanced prompt with explicit character requirements
+        enhanced_prompt = f"{scene_continuity}{character_consistency}{style_consistency}{base_prompt}"
+        
+        # Add style specifications
+        enhanced_prompt += " --style consistent children's book illustration, same artistic style throughout, cohesive visual narrative, exact character consistency"
+        
+        return enhanced_prompt
+    
     async def generate_scene_image(self, scene: StoryScene, 
                                  story_title: str = "story") -> AssetGenerationStatus:
-        """Generate an image for a single scene."""
+        """Generate an image for a single scene with consistency."""
         self.stats['total_generated'] += 1
         
         try:
+            # Build consistency-enhanced prompt
+            enhanced_prompt = self._build_consistency_prompt(scene, scene.visual_description)
+            
             # Determine provider order
             primary_provider = self.config.get('image_generation', {}).get('primary_provider', 'openai')
             fallback_providers = self.config.get('image_generation', {}).get('fallback_providers', [])
@@ -210,7 +285,7 @@ class ImageGenerator:
                 logger.info(f"Generating image for scene {scene.scene_number} using {provider_name}")
                 
                 provider = self.providers[provider_name]
-                result = await provider.generate_image(scene.visual_description, scene.scene_number)
+                result = await provider.generate_image(enhanced_prompt, scene.scene_number)
                 
                 if result['success']:
                     # Save the image
@@ -222,6 +297,13 @@ class ImageGenerator:
                         self.stats['successful_generations'] += 1
                         self.stats['provider_usage'][provider_name] = \
                             self.stats['provider_usage'].get(provider_name, 0) + 1
+                        
+                        # Track this scene for consistency
+                        self.generated_scenes.append({
+                            'scene_number': scene.scene_number,
+                            'prompt': enhanced_prompt,
+                            'image_path': str(image_path)
+                        })
                         
                         return AssetGenerationStatus(
                             scene_number=scene.scene_number,

@@ -69,9 +69,37 @@ Target Age: {{ concept.target_age }}
 Generate a story with {{ min_scenes }}-{{ max_scenes }} scenes.
 Each scene should have:
 - Rich narration (50-1200 characters)
-- Emotional tone mapping
-- Visual description for images
+- Comprehensive emotional tone mapping (must cover at least 70% of narration text)
+- Detailed visual description for image generation with consistent character appearances
 - Seamless transitions
+
+## Visual Description Guidelines
+For each scene's visual_description, include:
+- Character appearances (maintain consistent clothing, features, colors)
+- Setting details (location, lighting, atmosphere)
+- Character positions and actions
+- Color palette and mood
+- Style: children's book illustration, warm and engaging
+
+## Narration Tone Mapping Guidelines - CRITICAL
+For narration_tones, you MUST map emotional tones to cover AT LEAST 70% of the narration text:
+
+### Requirements:
+- Break the narration text into 3-5 meaningful segments (sentences or phrases)
+- Assign appropriate emotional tones to each segment
+- Use these valid tones: {{ valid_tones|join(', ') }}
+- Each segment should be 20-30% of the total narration text
+
+### Example Format:
+If narration_text is: "Luna approached the garden with wonder. Her heart filled with excitement as she saw the magical flowers. She felt safe knowing her friend was nearby."
+Then narration_tones should be:
+{
+  "Luna approached the garden with wonder": "curious",
+  "Her heart filled with excitement as she saw the magical flowers": "awe", 
+  "She felt safe knowing her friend was nearby": "calm"
+}
+
+### IMPORTANT: Ensure the total length of tone-mapped text covers at least 70% of the narration_text!
 
 ## Output Format
 Return valid JSON with this structure:
@@ -81,14 +109,34 @@ Return valid JSON with this structure:
     {
       "scene_number": 1,
       "plot_summary": "What happens in this scene",
-      "visual_description": "Description for image generation",
+      "visual_description": "Detailed visual description including character appearances, setting, lighting, and style",
       "narration_text": "Scene narration text",
       "narration_tones": {
-        "sentence": "emotional_tone"
+        "Luna approached the garden": "curious",
+        "her heart filled with wonder": "awe",
+        "she felt safe with her friend": "calm",
+        "the magic surrounded them": "mysterious"
       }
     }
   ]
 }
+
+## Character Consistency - CRITICAL REQUIREMENT
+You MUST maintain EXACT character consistency across all scenes:
+
+### Character Details to Maintain:
+{% for role, description in concept.characters.items() %}
+**{{ role }}**: {{ description }}
+- ALWAYS use this exact description in every scene
+- NEVER change clothing, appearance, or physical features
+- Keep the same name and personality throughout
+{% endfor %}
+
+### Visual Description Requirements:
+- Every scene's visual_description MUST include the exact character appearances as defined above
+- Use the specific character names (Luna, Professor Hoot, Shadow, etc.) in visual descriptions
+- Include clothing, colors, and physical features exactly as specified
+- Maintain consistent character positioning and interactions
 
 Generate the story:
         """
