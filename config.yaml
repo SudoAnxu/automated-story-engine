@@ -1,0 +1,83 @@
+# Story Engine Configuration
+
+# LLM Models Configuration
+llm_models:
+  primary:
+    name: "gpt-4o"
+    provider: "openai"
+    temperature: 0.7
+    max_tokens: 4000
+  secondary:
+    name: "claude-3-5-sonnet-20241022"
+    provider: "anthropic"
+    temperature: 0.7
+    max_tokens: 4000
+
+# Image Generation Configuration
+image_generation:
+  primary_provider: "openai"
+  fallback_providers: ["stability"]
+  model: "dall-e-3"
+  size: "1024x1024"
+  quality: "hd"
+  style: "natural"
+  output_format: "png"
+  max_retries: 3
+
+# Audio Generation Configuration
+audio_generation:
+  primary_provider: "openai"
+  fallback_providers: ["elevenlabs", "azure"]
+  model: "tts-1"
+  voice: "alloy"
+  speed: 1.0
+  output_format: "mp3"
+  max_retries: 3
+
+# Story Parameters
+story_parameters:
+  min_scenes: 3
+  max_scenes: 8
+  scene_duration: 30  # seconds
+  transition_duration: 2  # seconds
+  target_age_groups:
+    - "toddlers"
+    - "children"
+    - "teens"
+    - "adults"
+
+# Output Configuration
+output:
+  base_directory: "./generated_stories"
+  formats:
+    - "json"
+    - "html"
+    - "images"
+    - "audio"
+    - "mp4"
+  video_settings:
+    resolution: [1920, 1080]
+    fps: 24
+    quality: "high"
+
+# API Configuration
+api_keys:
+  openai: "${OPENAI_API_KEY}"
+  anthropic: "${ANTHROPIC_API_KEY}"
+  stability: "${STABILITY_API_KEY}"
+  elevenlabs: "${ELEVENLABS_API_KEY}"
+  azure:
+    key: "${AZURE_SPEECH_KEY}"
+    region: "${AZURE_SPEECH_REGION}"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  file: "logs/story_engine.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Performance Settings
+performance:
+  max_concurrent_generations: 3
+  timeout_seconds: 300
+  retry_delay_seconds: 5
